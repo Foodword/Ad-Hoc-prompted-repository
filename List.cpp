@@ -20,3 +20,11 @@ void List::display() const {
                   << "\n";
     }
 }
+
+bool List::removeItem(int index) {
+    if (index < 0 || index >= (int)items.size()) {
+        return false; // invalid index
+    }
+    items.erase(items.begin() + index);
+    return true;
+}
