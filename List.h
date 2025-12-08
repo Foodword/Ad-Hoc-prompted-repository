@@ -11,6 +11,7 @@ private:
 public:
     void addItem(const Item &item);
     void display() const;
+    bool removeItem(int index);   // NEW
 };
 
 #endif
