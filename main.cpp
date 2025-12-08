@@ -8,8 +8,8 @@ int main() {
 
     int choice = 0;
 
-    while (choice != 3) {
-        std::cout << "\n1. Add item\n2. Show items\n3. Quit\n";
+    while (choice != 4) {
+        std::cout << "\n1. Add item\n2. Show items\n3. Remove item\n4. Quit\n";
         std::cout << "Choose: ";
         std::cin >> choice;
 
@@ -31,6 +31,17 @@ int main() {
         }
         else if (choice == 2) {
             todoList.display();
+        }
+        else if (choice == 3) {
+            int index;
+            std::cout << "Enter item number to remove: ";
+            std::cin >> index;
+
+            if (todoList.removeItem(index - 1)) {
+                std::cout << "Item removed.\n";
+            } else {
+                std::cout << "Invalid item number.\n";
+            }
         }
     }
 
